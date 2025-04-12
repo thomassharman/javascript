@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(14, 16, 27);
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+}
+
+button:hover {
+    background-color: rgba(65, 68, 84, 0.635);
+}
+
+button:active {
+    background-color: rgba(103, 104, 108, 0.635);
+}
+
+.moves {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+#reset {
+    flex-grow: 1;
+}
