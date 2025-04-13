@@ -30,3 +30,13 @@ button:active {
 #reset {
     flex-grow: 1;
 }
+
+.scoreBoard {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 10px;
+    border-radius: 10px;
+}

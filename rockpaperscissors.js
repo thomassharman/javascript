@@ -4,6 +4,20 @@ const score = {
     losses: 0,
     ties: 0
 }
+
+function reset() {
+    score.wins = 0
+    score.losses = 0
+    score.ties = 0
+    alert (`game reset. wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`
+    )
+    let scoreBoard = document.querySelector('.scoreBoard')
+
+scoreBoard.innerHTML = 
+`<p> wins: ${score.wins}</p>
+ <p> Losses: ${score.losses}</p>
+ <p> Ties; ${score.ties}</p>`
+    }
 //keeping this object out of the scopes makes it a global variable.
 //using objects to keep score of the game
 
@@ -73,20 +87,21 @@ else if (result === "we tie" ) {
 }
     
 
-alert (`Computer chose ${computerMove} ${result}
-    wins: ${score.wins}, Losses: ${score.losses}, Ties; ${score.ties}`)
+alert (`Computer chose ${computerMove} ${result}. wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`)
 // remember that === to avoid the computer converting it.
 
-saveGame()
+let scoreBoard = document.querySelector('.scoreBoard')
+
+scoreBoard.innerHTML = 
+`<p> wins: ${score.wins}</p>
+ <p> Losses: ${score.losses}</p>
+ <p> Ties; ${score.ties}</p>`
+
+ saveGame()
 }
 
-function reset() {
-score.wins = 0
-score.losses = 0
-score.ties = 0
-alert (`game reset. wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`
-)
-}
+
+
 //using JSON to save game score to the computer locally
 function saveGame() {
     localStorage.setItem('game score', JSON.stringify(score))
@@ -103,6 +118,7 @@ function loadGame() {
     }
     //this takes a value fot the saved game score and, if there is one, it will turn it back into an object using JSON.parse
 }
+
 
 
 
