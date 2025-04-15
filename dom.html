@@ -10,10 +10,22 @@
     <div class="topDiv">
         <button class="btn1">first button</button>
         <button class="btn2">second button</button>
+        <button class = "subscribeButton" onclick = "subscribe(subscribeButtonHTML)">Subscribe</button>
+    </div>
+
+    <div class = "amazonShipping">
+        <input class = "priceInput" placeholder = "Cost of Order" onkeydown="ExecuteFunction()">
+        <button id = "calculateShippingButton" onclick = "calculateShipping()">
+            Calculate Shipping
+        </button>
+        <div>
+            <p class = "orderPrice"></p>
+
+        </div>
     </div>
    
 
 
-<script src="./dom.js"></script>    
+<script src="./dom-projects.js"></script>    
 </body>
 </html>

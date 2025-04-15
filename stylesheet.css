@@ -40,3 +40,13 @@ button:active {
     padding: 10px;
     border-radius: 10px;
 }
+
+input {
+    background-color: transparent;
+    border: 0cap;
+    color: white;
+}
+
+.amazonShipping {
+    margin: 20px;
+}
