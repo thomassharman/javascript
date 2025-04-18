@@ -20,7 +20,6 @@ scoreBoard.innerHTML =
     }
 //keeping this object out of the scopes makes it a global variable.
 //using objects to keep score of the game
-
 function computerMakesMove() {
     let randomNumber = (Math.random())
      //generates a random number between 0 and 1
@@ -119,9 +118,20 @@ function loadGame() {
     //this takes a value fot the saved game score and, if there is one, it will turn it back into an object using JSON.parse
 }
 
+let isAutoplaying = false
+let intervalID; // declaring outside of the function avoids any scope form messing up. It can be inserted into the autoplay() function
 
-
-
-
-
-
+function autoplay() {
+    if (!isAutoplaying){
+       intervalID = setInterval(function(){
+            const AutoPlayerMove = computerMakesMove()
+            playGame(AutoPlayerMove)
+        },1000)
+        isAutoplaying = true
+    }
+    //setInterval returns a number and this number can be used as an ID. this is what is used to stop the interval
+    else {
+    clearInterval(intervalID)//clearInterval is a built in function
+    isAutoplaying = false
+    }
+}
